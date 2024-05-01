@@ -21,11 +21,11 @@ app
   .use(createRouter(app))
   .use(
     createAuth0({
-      domain: process.env.VUE_APP_AUTH0_DOMAIN,
-      clientId: process.env.VUE_APP_AUTH0_CLIENT_ID,
+      domain: import.meta.env.VITE_AUTH0_DOMAIN,
+      clientId: import.meta.env.VITE_AUTH0_CLIENT_ID,
       authorizationParams: {
         redirect_uri: window.location.origin,
-        audience: process.env.VUE_APP_AUTH0_AUDIENCE,
+        audience: import.meta.env.VITE_AUTH0_AUDIENCE,
       }
     })
   )
